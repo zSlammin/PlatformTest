@@ -38,7 +38,15 @@ export default function middleware(req: NextRequest) {
   if (hostname === "openapemarket.xyz" || hostname === "platforms.vercel.app") {
     return NextResponse.redirect("https://demo.openapemarket.xyz");
   }
-
+  if (hostname === "test.platform-test-nine.vercel.app"){
+    return NextResponse.redirect("https://test-nine.openapemarket.xyz")
+  }
+  if (hostname === "test.openapemarket.xyz") {
+    return NextResponse.redirect("https://openapetest.openapemarket.xyz")
+  }
+  if (hostname === "test.gobblings.xyz"){
+    return NextResponse.redirect("https://gobblings.openapemarket.xyz")
+  }
   /*  You have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
       You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
       in this case, our team slug is "platformize", thus *.platformize.vercel.app works. Do note that you'll
