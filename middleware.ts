@@ -31,13 +31,13 @@ export default function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
   // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "demo.platform-test-nine.vercel.app";
+  const hostname = req.headers.get("host") || "demo.openapemarket.xyz";
   console.log("HOST NAME " + hostname)
 
   // Only for demo purposes - remove this if you want to use your root domain as the landing page
-  // if (hostname === "platform-test-nine.vercel.app" || hostname === "platforms.vercel.app") {
-  //   return NextResponse.redirect("http://demo.platform-test-nine.vercel.app");
-  // }
+  if (hostname === "openapemarket.xyz" || hostname === "platforms.vercel.app") {
+    return NextResponse.redirect("https://demo.openapemarket.xyz");
+  }
 
   /*  You have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
       You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
@@ -46,7 +46,7 @@ export default function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
-          .replace(`.platform-test-nine.vercel.app`, "")
+          .replace(`.openapemarket.xyz`, "")
           .replace(`.platformize.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
   // rewrites for app pages
