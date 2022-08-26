@@ -31,11 +31,11 @@ export default function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
   // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "demo.vercel.pub";
+  const hostname = req.headers.get("host") || "demo.platform-test-nine.vercel.app";
 
   // Only for demo purposes - remove this if you want to use your root domain as the landing page
-  if (hostname === "vercel.pub" || hostname === "platforms.vercel.app") {
-    return NextResponse.redirect("https://demo.vercel.pub");
+  if (hostname === "platform-test-nine.vercel.app" || hostname === "platforms.vercel.app") {
+    return NextResponse.redirect("https://demo.platform-test-nine.vercel.app");
   }
 
   /*  You have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
