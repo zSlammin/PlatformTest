@@ -42,7 +42,7 @@ export default function middleware(req: NextRequest) {
     return NextResponse.redirect("https://test-nine.openapemarket.xyz")
   }
   if (hostname === "test.openapemarket.xyz") {
-    return NextResponse.redirect("https://openapetest.openapemarket.xyz")
+    return NextResponse.rewrite("https://app.openapemarket.xyz")
   }
   if (hostname === "test.gobblings.xyz"){
     return NextResponse.redirect("https://gobblings.openapemarket.xyz")
